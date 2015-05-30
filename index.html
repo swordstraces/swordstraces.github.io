@@ -338,7 +338,31 @@
 <li>[[ 提取list 或者 data frames，只会提取出一个元素</li>
 <li>$ 是用来通过name去提取list 或者 data frame</li>
 </ul>
+<p>提取矩阵：</p>
+<p>提取矩阵的的时候会自动丢失维度， 返回一个vector<br>可以使用 <strong>drop = FALES</strong> 命令取消</p>
+<h2 id="1-4_移除NA值">1.4 移除NA值</h2><pre><code>&gt; x &lt;- <span class="function"><span class="title">c</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>, NA, <span class="number">4</span>, NA, <span class="number">5</span>)</span></span>
+&gt; bad &lt;- is.<span class="function"><span class="title">na</span><span class="params">(x)</span></span>
+&gt; x[!bad]
+[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span>
+</code></pre><p>complete.cases()命令</p>
+<pre><code>&gt; airquality[<span class="number">1</span>:<span class="number">6</span>, ]
+  Ozone Solar<span class="class">.R</span> Wind Temp Month Day
+<span class="number">1</span>    <span class="number">41</span>     <span class="number">190</span>  <span class="number">7.4</span>   <span class="number">67</span>     <span class="number">5</span>   <span class="number">1</span>
+<span class="number">2</span>    <span class="number">36</span>     <span class="number">118</span>  <span class="number">8.0</span>   <span class="number">72</span>     <span class="number">5</span>   <span class="number">2</span>
+<span class="number">3</span>    <span class="number">12</span>     <span class="number">149</span> <span class="number">12.6</span>   <span class="number">74</span>     <span class="number">5</span>   <span class="number">3</span>
+<span class="number">4</span>    <span class="number">18</span>     <span class="number">313</span> <span class="number">11.5</span>   <span class="number">62</span>     <span class="number">5</span>   <span class="number">4</span>
+<span class="number">5</span>    NA     NA  <span class="number">14.3</span>   <span class="number">56</span>     <span class="number">5</span>   <span class="number">5</span>
+<span class="number">6</span>    <span class="number">28</span>     NA  <span class="number">14.9</span>   <span class="number">66</span>     <span class="number">5</span>   <span class="number">6</span>
+&gt; good &lt;- complete.<span class="function"><span class="title">cases</span><span class="params">(airquality)</span></span>
 
+&gt; airquality[good, ][<span class="number">1</span>:<span class="number">6</span>, ]
+Ozone Solar<span class="class">.R</span> Wind Temp Month Day
+<span class="number">1</span>    <span class="number">41</span>     <span class="number">190</span>  <span class="number">7.4</span>   <span class="number">67</span>     <span class="number">5</span>   <span class="number">1</span>
+<span class="number">2</span>    <span class="number">36</span>     <span class="number">118</span>  <span class="number">8.0</span>   <span class="number">72</span>     <span class="number">5</span>   <span class="number">2</span>
+<span class="number">3</span>    <span class="number">12</span>     <span class="number">149</span> <span class="number">12.6</span>   <span class="number">74</span>     <span class="number">5</span>   <span class="number">3</span>
+<span class="number">4</span>    <span class="number">18</span>     <span class="number">313</span> <span class="number">11.5</span>   <span class="number">62</span>     <span class="number">5</span>   <span class="number">4</span>
+<span class="number">7</span>    <span class="number">23</span>     <span class="number">299</span>  <span class="number">8.6</span>   <span class="number">65</span>     <span class="number">5</span>   <span class="number">7</span>
+</code></pre>
       
     </div>
     
