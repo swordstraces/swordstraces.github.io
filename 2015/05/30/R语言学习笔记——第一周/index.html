@@ -395,7 +395,35 @@ Ozone Solar<span class="class">.R</span> Wind Temp Month Day
 <span class="number">3</span>    <span class="number">12</span>     <span class="number">149</span> <span class="number">12.6</span>   <span class="number">74</span>     <span class="number">5</span>   <span class="number">3</span>
 <span class="number">4</span>    <span class="number">18</span>     <span class="number">313</span> <span class="number">11.5</span>   <span class="number">62</span>     <span class="number">5</span>   <span class="number">4</span>
 <span class="number">7</span>    <span class="number">23</span>     <span class="number">299</span>  <span class="number">8.6</span>   <span class="number">65</span>     <span class="number">5</span>   <span class="number">7</span>
-</code></pre>
+</code></pre><h2 id="1-5_读写数据">1.5 读写数据</h2><h3 id="1-5-1_读取">1.5.1 读取</h3><ul>
+<li><strong><em>read.table</em></strong>, read.csv for reading tabular data</li>
+<li><strong><em>readLines</em></strong> for reading iines of a text file</li>
+<li><strong><em>source</em></strong>, for reading in R code files(inverse of dump)</li>
+<li><strong><em>dget</em></strong>, for reading in R code files(inverse of dput)</li>
+<li><strong><em>load</em></strong>, for reading in saved workspace</li>
+<li><strong><em>unserialize</em></strong>, for reading single R objects in binary form</li>
+</ul>
+<h3 id="1-5-2_写入">1.5.2 写入</h3><ul>
+<li>write.table</li>
+<li>writeLines</li>
+<li>dump</li>
+<li>dput</li>
+<li>save</li>
+<li>serialize</li>
+</ul>
+<p>read.table</p>
+<pre><code>-<span class="ruby"> file, the name
+</span>-<span class="ruby"> header, logical, 文档是否有标题
+</span>-<span class="ruby"> sep, seprated 表示每列通过什么区分
+</span>-<span class="ruby"> colClasses, 指定数据类型。在读取大型数据时候加快执行速度</span>
+</code></pre><p>R会自动：</p>
+<ul>
+<li>跳过以#开头的行</li>
+<li>计算出一共多少行</li>
+<li>得出每列的数据类型</li>
+</ul>
+<p>read.csv和read.table 基本一样，区别是read.csv以<strong>逗号</strong>分割数据。 </p>
+
       
     </div>
     
