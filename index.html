@@ -311,14 +311,17 @@
 <ul>
 <li><p>factors are treated specially by modelling funcitons like <strong>lm()</strong> and <strong>glm()</strong></p>
 <blockquote>
-<p>x &lt;- factor(c(“yes”, “yes”, “no”, “yes”, “no”))<br>x<br>  [1] yes yes no yes no<br>  Levels: no yes<br>table(x)<br>  x<br>  no yes<br>   2   3<br>unclass(x)<br>  [1] 2 2 1 2 1<br>  attr(,”levels”)<br>  [1] “no”  “yes”<br>  可以通过levels属性规定基础序列</p>
-<p>x &lt;- factor(c(“yes”, “yes”, “no”, “yes”, “no”),</p>
-<pre><code>levels = <span class="function"><span class="title">c</span><span class="params">(<span class="string">"yes"</span>, <span class="string">"no"</span>)</span></span>)
-</code></pre><p>x<br>  [1] yes yes no yes no<br>  Levels: yes no</p>
+<p>x &lt;- factor(c(“yes”, “yes”, “no”, “yes”, “no”))<br>x<br>  [1] yes yes no yes no<br>  Levels: no yes<br>table(x)<br>  x<br>  no yes<br>   2   3<br>unclass(x)<br>  [1] 2 2 1 2 1<br>  attr(,”levels”)<br>  [1] “no”  “yes”</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="1-2-8_Missing_Values">1.2.8 Missing Values</h3><p>缺失数据通过 NA 或者 NaN 表示</p>
+<p>可以通过levels属性规定基础序列</p>
+<pre><code>&gt; x &lt;- factor(c(<span class="string">"yes"</span>, <span class="string">"yes"</span>, <span class="string">"no"</span>, <span class="string">"yes"</span>, <span class="string">"no"</span>),
+  levels = c(<span class="string">"yes"</span>, <span class="string">"no"</span>))
+&gt; x
+[<span class="number">1</span>] <span class="literal">yes</span> <span class="literal">yes</span> <span class="literal">no</span> <span class="literal">yes</span> <span class="literal">no</span> 
+<span class="attribute">Levels</span>: <span class="literal">yes</span> <span class="literal">no</span>
+</code></pre><h3 id="1-2-8_Missing_Values">1.2.8 Missing Values</h3><p>缺失数据通过 NA 或者 NaN 表示</p>
 <ul>
 <li>is.na() test if they are NA</li>
 <li>is.nan() test for NaN</li>
