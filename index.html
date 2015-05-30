@@ -225,7 +225,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-1_什么是R语言">1.1 什么是R语言</h2><ul>
+        <p>[TOC]</p>
+<h2 id="1-1_什么是R语言">1.1 什么是R语言</h2><ul>
 <li>是S语言的一种“方言”</li>
 <li>S是1976年，John Chambers在贝尔实验室发明的</li>
 <li>1993年，R的第一个公共发行版</li>
@@ -309,13 +310,21 @@
 [<span class="number">1</span>] <span class="number">1</span>+<span class="number">4</span>i
 </code></pre><h3 id="1-2-7_Factors">1.2.7 Factors</h3><p>factors are used to represent categorical data.<br>can be unordered or ordered</p>
 <ul>
-<li><p>factors are treated specially by modelling funcitons like <strong>lm()</strong> and <strong>glm()</strong></p>
-<blockquote>
-<p>x &lt;- factor(c(“yes”, “yes”, “no”, “yes”, “no”))<br>x<br>  [1] yes yes no yes no<br>  Levels: no yes<br>table(x)<br>  x<br>  no yes<br>   2   3<br>unclass(x)<br>  [1] 2 2 1 2 1<br>  attr(,”levels”)<br>  [1] “no”  “yes”</p>
-</blockquote>
-</li>
+<li>factors are treated specially by modelling funcitons like <strong>lm()</strong> and <strong>glm()</strong></li>
 </ul>
-<p>可以通过levels属性规定基础序列</p>
+<pre><code>&gt; x &lt;- <span class="function"><span class="title">factor</span><span class="params">(c(<span class="string">"yes"</span>, <span class="string">"yes"</span>, <span class="string">"no"</span>, <span class="string">"yes"</span>, <span class="string">"no"</span>)</span></span>) 
+&gt; x
+[<span class="number">1</span>] yes yes no yes no
+Levels: no yes
+&gt; <span class="function"><span class="title">table</span><span class="params">(x)</span></span> 
+x
+no yes 
+ <span class="number">2</span>   <span class="number">3</span>
+&gt; <span class="function"><span class="title">unclass</span><span class="params">(x)</span></span>
+[<span class="number">1</span>] <span class="number">2</span> <span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span>
+<span class="function"><span class="title">attr</span><span class="params">(,<span class="string">"levels"</span>)</span></span>
+[<span class="number">1</span>] <span class="string">"no"</span>  <span class="string">"yes"</span>
+</code></pre><p>可以通过levels属性规定基础序列</p>
 <pre><code>&gt; x &lt;- factor(c(<span class="string">"yes"</span>, <span class="string">"yes"</span>, <span class="string">"no"</span>, <span class="string">"yes"</span>, <span class="string">"no"</span>),
   levels = c(<span class="string">"yes"</span>, <span class="string">"no"</span>))
 &gt; x
