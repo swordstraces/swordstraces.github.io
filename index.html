@@ -267,13 +267,11 @@
 <h4 id="2-2-2_the_“…”_Argument">2.2.2 the “…” Argument</h4><ul>
 <li>… is often used when extending another function and don’t want to copy the entire argument list of the original function</li>
 <li>Generic functions use … so that extra arguments can be passed to methods</li>
-<li><p>the … argument is also necessary when the number of arguments passed to the function cannot be know in advance.</p>
-<blockquote>
-<p>args(paste)<br>  function (…, sep = “ “, collapse = NULL)</p>
-</blockquote>
-</li>
+<li>the … argument is also necessary when the number of arguments passed to the function cannot be know in advance.</li>
 </ul>
-<h2 id="2-3_Scoping_rules_作用域">2.3 Scoping rules 作用域</h2><p>当R试图绑定一个值的时候，他会从一些列的环境中搜索 <em>environments</em><br>用 <em>search()</em> 来罗列search list<br>首先会从<em>global</em>环境中搜寻</p>
+<pre><code>&gt; args(paste)
+<span class="function"><span class="keyword">function</span> <span class="params">(<span class="rest_arg">..., sep</span> = <span class="string">" "</span>, collapse = NULL)</span></span>
+</code></pre><h2 id="2-3_Scoping_rules_作用域">2.3 Scoping rules 作用域</h2><p>当R试图绑定一个值的时候，他会从一些列的环境中搜索 <em>environments</em><br>用 <em>search()</em> 来罗列search list<br>首先会从<em>global</em>环境中搜寻</p>
 <ul>
 <li>the scoping rules determine how a value is associated with a free variable in a function</li>
 <li>R uses <strong>lexical scoping</strong> or <strong>static scoping</strong>. A common alternative is a dynamic scoping.</li>
