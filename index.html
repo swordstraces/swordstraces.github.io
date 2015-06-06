@@ -232,19 +232,18 @@
 <li>repeat</li>
 <li>break</li>
 <li>next</li>
-<li><p>return<br>与PYTHON中类似，syntax稍有不同：</p>
-<p>  if(<condition>) {</condition></p>
-<pre><code><span class="keyword">do</span> something
-</code></pre><p>  } else if(<conditon>) {</conditon></p>
-<pre><code><span class="keyword">do</span> something
-</code></pre><p>  } else {</p>
-<pre><code><span class="keyword">do</span> something <span class="keyword">else</span>
-</code></pre><p>  for(i in 1:10) {</p>
-<pre><code><span class="function"><span class="title">pirnt</span><span class="params">(i)</span></span>
-</code></pre><p>  }</p>
-</li>
+<li>return<br>与PYTHON中类似，syntax稍有不同：</li>
 </ul>
-<p>repeat一般和break一起用，无限循环</p>
+<pre><code><span class="keyword">if</span>(&lt;<span class="keyword">condition</span>&gt;) {
+        <span class="keyword">do</span> something
+} <span class="keyword">else</span> <span class="keyword">if</span>(&lt;conditon&gt;) {
+        <span class="keyword">do</span> something
+} <span class="keyword">else</span> {
+        <span class="keyword">do</span> something <span class="keyword">else</span>
+<span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>) {
+        pirnt(i)
+}
+</code></pre><p>repeat一般和break一起用，无限循环</p>
 <pre><code><span class="title">x0</span> &lt;- <span class="number">1</span>
 <span class="title">tol</span> &lt;- <span class="number">1e-8</span>
 <span class="title">repeat</span> {
@@ -307,22 +306,35 @@
 <li>Dates are represented by <strong>Date</strong> class</li>
 <li>Times are represented by the <strong>POSIXct</strong> or the <strong>POSIXlt</strong> class</li>
 <li>Dates are stored internally as the number of days since 1970–01-01</li>
-<li><p>Times are stored internally as the number of seconds since 1970-01-01</p>
-<p>  x&lt;- as.Date(“1970-01-01”)<br>  x<br>  [1] “1970-01-01”<br>  unclass(x)<br>  [1] 0<br>  unclass(as.Date(“1970-01-01”))<br>  [1] 1</p>
-</li>
-<li><p><strong>POSIXct</strong> is just a very large integer under the hood; it use a useful class when you want to store times in something like a data frame</p>
-</li>
+<li>Times are stored internally as the number of seconds since 1970-01-01</li>
+</ul>
+<pre><code>x&lt;- as.<span class="function"><span class="title">Date</span><span class="params">(<span class="string">"1970-01-01"</span>)</span></span>
+x
+[<span class="number">1</span>] <span class="string">"1970-01-01"</span>
+<span class="function"><span class="title">unclass</span><span class="params">(x)</span></span>
+[<span class="number">1</span>] <span class="number">0</span>
+<span class="function"><span class="title">unclass</span><span class="params">(as.Date(<span class="string">"1970-01-01"</span>)</span></span>)
+[<span class="number">1</span>] <span class="number">1</span>
+</code></pre><ul>
+<li><strong>POSIXct</strong> is just a very large integer under the hood; it use a useful class when you want to store times in something like a data frame</li>
 <li><strong>POSIXlt</strong> is a list underneath and it stores a bunch of other useful information like the day of the week, day of the year, month, day of the month</li>
 </ul>
 <p>there are a number of generic functions that work on dates and times:</p>
 <ul>
 <li><strong>weekdays</strong> give the day of the week</li>
 <li><strong>months</strong> give the month name</li>
-<li><p><strong>quarters</strong> give the quarter number (“Q1”,”Q2)</p>
-<p>  x &lt;- Sys.time()<br>  x<br>  [1] “2013-01-24 22:04:14 ETS“<br>  p &lt;- as.POSIXlt(x)<br>  names(unclass(p))<br>  [1] “sec” “min” “hour” “mday” “mon”<br>  [6] “year” “wday” “yday” “isdst”<br>  p$sec<br>  [1] 14.34</p>
-</li>
+<li><strong>quarters</strong> give the quarter number (“Q1”,”Q2)</li>
 </ul>
-<p>there is <strong>strptime</strong> function in case your dates are written in a different format:</p>
+<pre><code>x &lt;- Sys.time()
+x
+[<span class="number">1</span>] <span class="string">"2013-01-24 22:04:14 ETS“
+p &lt;- as.POSIXlt(x)
+names(unclass(p))
+[1] "</span>sec<span class="string">" "</span>min<span class="string">" "</span>hou<span class="string">r" "</span>mday<span class="string">" "</span>mon<span class="string">"
+[6] "</span>yea<span class="string">r" "w</span>day<span class="string">" "</span>yday<span class="string">" "</span>isdst<span class="string">"
+p$sec
+[1] 14.34</span>
+</code></pre><p>there is <strong>strptime</strong> function in case your dates are written in a different format:</p>
 <pre><code>datestring &lt;- c(<span class="string">"January 10, 2012 10:40"</span>, <span class="string">"December 9 ,2011)
 x &lt;- strptime(datestring, "</span><span class="variable">%B</span> <span class="variable">%d</span>, <span class="variable">%Y</span> <span class="variable">%H</span>:<span class="variable">%M</span>:)
 X
