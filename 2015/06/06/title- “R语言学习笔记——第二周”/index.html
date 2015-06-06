@@ -279,7 +279,7 @@ pirnt">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="2-1_控制结构_Control_Structures">2.1 控制结构 Control Structures</h3><ul>
+        <h2 id="2-1_控制结构_Control_Structures">2.1 控制结构 Control Structures</h2><ul>
 <li>if,else</li>
 <li>for</li>
 <li>while</li>
@@ -310,7 +310,7 @@ pirnt">
         }
 }
 </code></pre><p>next: used to skip an iteration of loop<br>跳过本轮循环直接进入下一轮（break跳出循环）</p>
-<h3 id="2-2_Function">2.2 Function</h3><pre><code>f &lt;- <span class="function"><span class="keyword">function</span><span class="params">(&lt;arguments&gt;)</span> </span>{
+<h2 id="2-2_Function">2.2 Function</h2><pre><code>f &lt;- <span class="function"><span class="keyword">function</span><span class="params">(&lt;arguments&gt;)</span> </span>{
         ## <span class="keyword">do</span> something interesting
 }
 </code></pre><h4 id="2-2-1_argument_matching">2.2.1 argument matching</h4><ol>
@@ -328,7 +328,7 @@ pirnt">
 </blockquote>
 </li>
 </ul>
-<h3 id="2-3_Scoping_rules_作用域">2.3 Scoping rules 作用域</h3><p>当R试图绑定一个值的时候，他会从一些列的环境中搜索 <em>environments</em><br>用 <em>search()</em> 来罗列search list<br>首先会从<em>global</em>环境中搜寻</p>
+<h2 id="2-3_Scoping_rules_作用域">2.3 Scoping rules 作用域</h2><p>当R试图绑定一个值的时候，他会从一些列的环境中搜索 <em>environments</em><br>用 <em>search()</em> 来罗列search list<br>首先会从<em>global</em>环境中搜寻</p>
 <ul>
 <li>the scoping rules determine how a value is associated with a free variable in a function</li>
 <li>R uses <strong>lexical scoping</strong> or <strong>static scoping</strong>. A common alternative is a dynamic scoping.</li>
@@ -351,7 +351,36 @@ pirnt">
 [<span class="number">1</span>] <span class="string">"n"</span>  <span class="string">"pow"</span>
 &gt; <span class="function"><span class="title">get</span><span class="params">(<span class="string">"n"</span>, environmetn(cube)</span></span>)
 [<span class="number">1</span>] <span class="number">3</span>
-</code></pre>
+</code></pre><h2 id="2-4_Coding_Standard">2.4 Coding Standard</h2><ol>
+<li>Always use text files/text editor</li>
+<li>Indent your code</li>
+<li>Limit the width of your code(80 columns?)</li>
+<li>Limit the length of individual function</li>
+</ol>
+<h2 id="2-5_Dates_and_Time">2.5 Dates and Time</h2><ul>
+<li>Dates are represented by <strong>Date</strong> class</li>
+<li>Times are represented by the <strong>POSIXct</strong> or the <strong>POSIXlt</strong> class</li>
+<li>Dates are stored internally as the number of days since 1970–01-01</li>
+<li><p>Times are stored internally as the number of seconds since 1970-01-01</p>
+<p>  x&lt;- as.Date(“1970-01-01”)<br>  x</p>
+<h2 id="[1]_“1970-01-01”">[1] “1970-01-01”</h2><p>  unclass(x)</p>
+<h2 id="[1]_0">[1] 0</h2><p>  unclass(as.Date(“1970-01-01”))</p>
+<h2 id="[1]_1">[1] 1</h2></li>
+<li><p><strong>POSIXct</strong> is just a very large integer under the hood; it use a useful class when you want to store times in something like a data frame</p>
+</li>
+<li><strong>POSIXlt</strong> is a list underneath and it stores a bunch of other useful information like the day of the week, day of the year, month, day of the month</li>
+</ul>
+<p>there are a number of generic functions that work on dates and times:</p>
+<ul>
+<li><strong>weekdays</strong> give the day of the week</li>
+<li><strong>months</strong> give the month name</li>
+<li><p><strong>quarters</strong> give the quarter number (“Q1”,”Q2)</p>
+<p>  x &lt;- Sys.time()<br>  x</p>
+<h2 id="[1]_“2013-01-24_22:04:14_ETS“">[1] “2013-01-24 22:04:14 ETS“</h2><p>  p &lt;- as.POSIXlt(x)<br>  names(unclass(p))</p>
+<h2 id="[1]_“sec”_“min”_“hour”_“mday”_“mon”">[1] “sec” “min” “hour” “mday” “mon”</h2><h2 id="[6]_“year”_“wday”_“yday”_“isdst”">[6] “year” “wday” “yday” “isdst”</h2><p>  p$sec</p>
+<h2 id="[1]_14-34">[1] 14.34</h2></li>
+</ul>
+
       
     </div>
     
