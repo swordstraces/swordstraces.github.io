@@ -3,17 +3,56 @@
 <head>
   <meta charset="utf-8">
   
-  <title>r | 雨栖</title>
+  <title>“R语言学习笔记——第二周” | 雨栖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="R语言学习笔记——第二周2.1 控制结构 Control Structures
+if,else
+for
+while
+repeat
+break
+next
+return与PYTHON中类似，syntax稍有不同：if() {
+##do something
+} else if() {
+##do something
+} else {
+##do something else
+  for(i in 1:10)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="r">
-<meta property="og:url" content="http://wxshaw.tk/2015/06/06/R语言学习笔记——第二周/index.html">
+<meta property="og:title" content="“R语言学习笔记——第二周”">
+<meta property="og:url" content="http://wxshaw.tk/2015/06/06/title- “R语言学习笔记——第二周”/index.html">
 <meta property="og:site_name" content="雨栖">
-<meta property="og:description">
+<meta property="og:description" content="R语言学习笔记——第二周2.1 控制结构 Control Structures
+if,else
+for
+while
+repeat
+break
+next
+return与PYTHON中类似，syntax稍有不同：if() {
+##do something
+} else if() {
+##do something
+} else {
+##do something else
+  for(i in 1:10)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="r">
-<meta name="twitter:description">
+<meta name="twitter:title" content="“R语言学习笔记——第二周”">
+<meta name="twitter:description" content="R语言学习笔记——第二周2.1 控制结构 Control Structures
+if,else
+for
+while
+repeat
+break
+next
+return与PYTHON中类似，syntax稍有不同：if() {
+##do something
+} else if() {
+##do something
+} else {
+##do something else
+  for(i in 1:10)">
   
     <link rel="alternative" href="/atom.xml" title="雨栖" type="application/atom+xml">
   
@@ -115,7 +154,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/R/" style="font-size: NaNpx;">R</a><a href="/tags/随笔/" style="font-size: NaNpx;">随笔</a>
+						<a href="/tags/R/" style="font-size: 20px;">R</a><a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -197,10 +236,10 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-R语言学习笔记——第二周" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-title- “R语言学习笔记——第二周”" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/06/R语言学习笔记——第二周/" class="article-date">
+      <a href="/2015/06/06/title- “R语言学习笔记——第二周”/" class="article-date">
   	<time datetime="2015-06-06T09:06:34.000Z" itemprop="datePublished">2015-06-06</time>
 </a>
     </div>
@@ -214,7 +253,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      r
+      “R语言学习笔记——第二周”
     </h1>
   
 
@@ -222,6 +261,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -230,7 +273,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="R语言学习笔记——第二周">R语言学习笔记——第二周</h2><h3 id="2-1_控制结构_Control_Structures">2.1 控制结构 Control Structures</h3><ul>
+<li>if,else</li>
+<li>for</li>
+<li>while</li>
+<li>repeat</li>
+<li>break</li>
+<li>next</li>
+<li><p>return<br>与PYTHON中类似，syntax稍有不同：<br>if(<condition>) {</condition></p>
+<pre><code>#<span class="id">#do</span> something
+</code></pre><p>} else if(<conditon>) {</conditon></p>
+<pre><code>#<span class="id">#do</span> something
+</code></pre><p>} else {</p>
+<pre><code>#<span class="id">#do</span> something <span class="keyword">else</span>
+</code></pre><p>  for(i in 1:10) {</p>
+<pre><code><span class="function"><span class="title">pirnt</span><span class="params">(i)</span></span>
+</code></pre><p>  }</p>
+</li>
+</ul>
+<p>repeat一般和break一起用，无限循环<br>    x0 &lt;- 1<br>    tol &lt;- 1e-8<br>    repeat {<br>            x1 &lt;- computeEstimate()<br>            if(abs(x1 - x0) &lt; tol {<br>                break<br>            } else {<br>                x0 &lt;- x1<br>            }<br>    }</p>
+<p>next: used to skip an iteration of loop<br>跳过本轮循环直接进入下一轮（break跳出循环）</p>
+<h3 id="2-2_Function">2.2 Function</h3><pre><code>f &lt;- <span class="function"><span class="keyword">function</span><span class="params">(&lt;arguments&gt;)</span> </span>{
+        ## <span class="keyword">do</span> something interesting
+}
+</code></pre><h4 id="2-2-1_argument_matching">2.2.1 argument matching</h4><ol>
+<li>check for exact match for a named argument 完全匹配</li>
+<li>check for a partial match 部分匹配</li>
+<li>check for a positional match 位置匹配</li>
+</ol>
+<p>R中定义函数的最后一行为返回值（return）</p>
+<h4 id="2-2-2_the_“…”_Argument">2.2.2 the “…” Argument</h4><ul>
+<li>… is often used when extending another function and don’t want to copy the entire argument list of the original funciont</li>
+<li>Generic functions use … so that extra arguments can be passed to methods</li>
+<li>the … argument is also necessary when the number of arguments passed to the function cannot be know in advance.<blockquote>
+<p>args(paste)<br>  function (…, sep = “ “, collapse = NULL)</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-3_Scoping_rules_作用域">2.3 Scoping rules 作用域</h3><p>当R试图绑定一个值的时候，他会从一些列的环境中搜索 <em>environments</em><br>用 <em>search()</em> 来罗列search list<br>首先会从<em>global</em>环境中搜寻</p>
+
       
     </div>
     
@@ -270,7 +351,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="R语言学习笔记——第二周" data-title="r" data-url="http://wxshaw.tk/2015/06/06/R语言学习笔记——第二周/"></div>
+	<div class="ds-thread" data-thread-key="title- “R语言学习笔记——第二周”" data-title="“R语言学习笔记——第二周”" data-url="http://wxshaw.tk/2015/06/06/title- “R语言学习笔记——第二周”/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
