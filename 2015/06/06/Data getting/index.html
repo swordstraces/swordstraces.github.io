@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/5 | 雨栖</title>
+  <title>NOTES：获取和整理数据 | 雨栖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雨栖">
-<meta property="og:url" content="http://wxshaw.tk/archives/2015/05/index.html">
+  <meta name="description" content="数据处理过程Raw data -&amp;gt; Processing script -&amp;gt; tidy data -&amp;gt; data analysis -&amp;gt; data communication
+
+“Data are values of qualitative or quantitative variables, belonging to a set of items.”
+
+
+qualitative: country">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOTES：获取和整理数据">
+<meta property="og:url" content="http://wxshaw.tk/2015/06/06/Data getting/index.html">
 <meta property="og:site_name" content="雨栖">
-<meta property="og:description">
+<meta property="og:description" content="数据处理过程Raw data -&amp;gt; Processing script -&amp;gt; tidy data -&amp;gt; data analysis -&amp;gt; data communication
+
+“Data are values of qualitative or quantitative variables, belonging to a set of items.”
+
+
+qualitative: country">
+<meta property="og:image" content="/image/gettingdata1.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雨栖">
-<meta name="twitter:description">
+<meta name="twitter:title" content="NOTES：获取和整理数据">
+<meta name="twitter:description" content="数据处理过程Raw data -&amp;gt; Processing script -&amp;gt; tidy data -&amp;gt; data analysis -&amp;gt; data communication
+
+“Data are values of qualitative or quantitative variables, belonging to a set of items.”
+
+
+qualitative: country">
   
     <link rel="alternative" href="/atom.xml" title="雨栖" type="application/atom+xml">
   
@@ -197,82 +213,140 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Data getting" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/05/30/R语言学习笔记——第一周/" class="archive-article-date">
-  	<time datetime="2015-05-30T12:55:04.000Z" itemprop="datePublished">5月 30</time>
+    <div class="article-meta">
+      <a href="/2015/06/06/Data getting/" class="article-date">
+  	<time datetime="2015-06-06T13:23:57.000Z" itemprop="datePublished">2015-06-06</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/30/R语言学习笔记——第一周/">R语言学习笔记——第一周</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NOTES：获取和整理数据
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/05/20/HelloWorld/" class="archive-article-date">
-  	<time datetime="2015-05-20T21:50:47.000Z" itemprop="datePublished">5月 20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/20/HelloWorld/">Hello World！</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据处理过程">数据处理过程</h2><p>Raw data -> Processing script -> tidy data -> data analysis -> data communication</p>
+<blockquote>
+<p>“Data are values of qualitative or quantitative variables, belonging to a set of items.”</p>
+</blockquote>
+<ul>
+<li>qualitative: country of origin, sex, treatment</li>
+<li>quantitative: height, weight, blood pressure</li>
+</ul>
+<h3 id="The_four_things_you_should_have">The four things you should have</h3><ol>
+<li>the raw data</li>
+<li>a tidy data set</li>
+<li>a code book describing each variable and its values in the tidy data set</li>
+<li>an explicit and exact recipe you used to go from 1 -> 2,3</li>
+</ol>
+<h2 id="1-_Get/set_working_directory">1. Get/set working directory</h2><p><strong>getwd() and setwd()</strong></p>
+<ul>
+<li>relative - setwd(“./data”), setwd(“../“)</li>
+<li>absolute - setwd(“.Users/jtleek/data/“)</li>
+</ul>
+<h4 id="checking_for_and_creating_directories">checking for and creating directories</h4><ul>
+<li>file.exists(“directoryName”)</li>
+<li>dir.create(“directoryName”)</li>
+</ul>
+<pre><code><span class="keyword">if</span> (!<span class="built_in">file</span>.exist(<span class="string">"data"</span>)) 
+        dir.<span class="built_in">create</span>(<span class="string">"data"</span>)
+}
+</code></pre><h4 id="Getting_data_from_internet-_download-file()">Getting data from internet- download.file()</h4><pre><code>fileUrl &lt;- <span class="string">"https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"</span>
+download.file(fileUrl, destfile = <span class="string">"./data/cameras.csv"</span>, <span class="keyword">method</span> = <span class="string">"curl"</span>)
+list.files(<span class="string">"./data"</span>)
+[<span class="number">1</span>] <span class="string">"cameras.csv"</span>
+dateDownloaded &lt;- date()  <span class="comment">#记录下载时间</span>
+</code></pre><p><img src="/image/gettingdata1.png" alt=""></p>
+<h5 id="some_important_parameters">some important parameters</h5><ul>
+<li>quite you can tell R whether there are nay quoted values quote=“” means no quotes</li>
+<li>na.string set the character that represent a missing value</li>
+<li>rows how many rows to read of the file(rows =10 reads 10 lines)</li>
+<li>skip number of lines to skip before starting to read</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/06/06/title- R语言学习笔记——第二周/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">R语言学习笔记——第二周</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Data getting" data-title="NOTES：获取和整理数据" data-url="http://wxshaw.tk/2015/06/06/Data getting/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wxshaw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
