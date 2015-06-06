@@ -19,9 +19,8 @@ return与PYTHON中类似，syntax稍有不同：
 #do something
   } else {
 #do something else
-
-
-for(i in 1:10) {">
+  for(i in 1:10) {
+pirnt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="“R语言学习笔记——第二周”">
 <meta property="og:url" content="http://wxshaw.tk/2015/06/06/title- “R语言学习笔记——第二周”/index.html">
@@ -40,9 +39,8 @@ return与PYTHON中类似，syntax稍有不同：
 #do something
   } else {
 #do something else
-
-
-for(i in 1:10) {">
+  for(i in 1:10) {
+pirnt">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="“R语言学习笔记——第二周”">
 <meta name="twitter:description" content="2.1 控制结构 Control Structures
@@ -59,9 +57,8 @@ return与PYTHON中类似，syntax稍有不同：
 #do something
   } else {
 #do something else
-
-
-for(i in 1:10) {">
+  for(i in 1:10) {
+pirnt">
   
     <link rel="alternative" href="/atom.xml" title="雨栖" type="application/atom+xml">
   
@@ -296,12 +293,12 @@ for(i in 1:10) {">
 <pre><code><span class="id">#do</span> something
 </code></pre><p>  } else {</p>
 <pre><code><span class="id">#do</span> something <span class="keyword">else</span>
-</code></pre></li>
+</code></pre><p>  for(i in 1:10) {</p>
+<pre><code><span class="function"><span class="title">pirnt</span><span class="params">(i)</span></span>
+</code></pre><p>  }</p>
+</li>
 </ul>
-<pre><code><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>) <span class="comment">{
-        pirnt(i)
-}</span>
-</code></pre><p>repeat一般和break一起用，无限循环</p>
+<p>repeat一般和break一起用，无限循环</p>
 <pre><code><span class="title">x0</span> &lt;- <span class="number">1</span>
 <span class="title">tol</span> &lt;- <span class="number">1e-8</span>
 <span class="title">repeat</span> {
@@ -332,7 +329,29 @@ for(i in 1:10) {">
 </li>
 </ul>
 <h3 id="2-3_Scoping_rules_作用域">2.3 Scoping rules 作用域</h3><p>当R试图绑定一个值的时候，他会从一些列的环境中搜索 <em>environments</em><br>用 <em>search()</em> 来罗列search list<br>首先会从<em>global</em>环境中搜寻</p>
-
+<ul>
+<li>the scoping rules determine how a value is associated with a free variable in a function</li>
+<li>R uses <strong>lexical scoping</strong> or <strong>static scoping</strong>. A common alternative is a dynamic scoping.</li>
+<li>related to the scoping rules is how R uses the search list to bind a value to a symbol</li>
+<li>lexical scoping turns out to be particularly useful for simplifying statistical computations.</li>
+</ul>
+<h3 id="2-3-1_What_is_an_environment?">2.3.1 What is an environment?</h3><ul>
+<li>An <strong>environment</strong> is a collection of (symbol, value) pairs, i,e. x is a symbol and 3.14 might be its value</li>
+<li>Every environment has a parent environment; it is possible for an environment to have multiple “children”</li>
+<li>the only environment without a parent is the empty environment</li>
+<li>A function + an environment = a closure of <strong>function closure</strong></li>
+</ul>
+<p>search for the value for a free variable:</p>
+<ul>
+<li>If the value of a symbol is not found in the environment in which a function was defined, then the search is continued in the <strong>parent</strong> environment</li>
+<li>The search continues down the sequence of parent environments until we hit the top-level environment; this usually the global environment(workspace) or the namespace of package.</li>
+<li>After the top-level environment, the search continues down the search list until we hit the empty environment. If a value for a given symbol cannot be found once the empty environment is arrived at, then an error is thrown.</li>
+</ul>
+<h3 id="2-3-2_What_is_in_a_function’s_environment?">2.3.2 What is in a function’s environment?</h3><pre><code>&gt; <span class="function"><span class="title">ls</span><span class="params">(environment(cube)</span></span>)
+[<span class="number">1</span>] <span class="string">"n"</span>  <span class="string">"pow"</span>
+&gt; <span class="function"><span class="title">get</span><span class="params">(<span class="string">"n"</span>, environmetn(cube)</span></span>)
+[<span class="number">1</span>] <span class="number">3</span>
+</code></pre>
       
     </div>
     
