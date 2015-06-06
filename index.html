@@ -322,7 +322,14 @@
 <p>  x &lt;- Sys.time()<br>  x<br>  [1] “2013-01-24 22:04:14 ETS“<br>  p &lt;- as.POSIXlt(x)<br>  names(unclass(p))<br>  [1] “sec” “min” “hour” “mday” “mon”<br>  [6] “year” “wday” “yday” “isdst”<br>  p$sec<br>  [1] 14.34</p>
 </li>
 </ul>
-
+<p>there is <strong>strptime</strong> function in case your dates are written in a different format:</p>
+<pre><code>datestring &lt;- c(<span class="string">"January 10, 2012 10:40"</span>, <span class="string">"December 9 ,2011)
+x &lt;- strptime(datestring, "</span><span class="variable">%B</span> <span class="variable">%d</span>, <span class="variable">%Y</span> <span class="variable">%H</span>:<span class="variable">%M</span>:)
+X
+[<span class="number">1</span>] <span class="string">"2012-01-10 10:40:00"</span> <span class="string">"2011-12-09 09:10:00"</span>
+class(<span class="keyword">x</span>)
+[<span class="number">1</span>] <span class="string">"POSIXlt "</span>POSIXt<span class="string">"</span>
+</code></pre>
       
     </div>
     
