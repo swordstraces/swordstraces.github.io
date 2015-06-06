@@ -225,24 +225,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="R语言学习笔记——第二周">R语言学习笔记——第二周</h2><h3 id="2-1_控制结构_Control_Structures">2.1 控制结构 Control Structures</h3><ul>
+        <h3 id="2-1_控制结构_Control_Structures">2.1 控制结构 Control Structures</h3><ul>
 <li>if,else</li>
 <li>for</li>
 <li>while</li>
 <li>repeat</li>
 <li>break</li>
 <li>next</li>
-<li>return<br>与PYTHON中类似，syntax稍有不同：</li>
+<li><p>return<br>与PYTHON中类似，syntax稍有不同：</p>
+<p>  if(<condition>) {</condition></p>
+<pre><code><span class="id">#do</span> something
+</code></pre><p>  } else if(<conditon>) {</conditon></p>
+<pre><code><span class="id">#do</span> something
+</code></pre><p>  } else {</p>
+<pre><code><span class="id">#do</span> something <span class="keyword">else</span>
+</code></pre></li>
 </ul>
-<p>if(<condition>) {</condition></p>
-<pre><code><span class="id">#do</span> something
-</code></pre><p>} else if(<conditon>) {</conditon></p>
-<pre><code><span class="id">#do</span> something
-</code></pre><p>} else {</p>
-<pre><code>    #<span class="keyword">do</span> something <span class="keyword">else</span>
-
-
-<span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>) <span class="comment">{
+<pre><code><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>) <span class="comment">{
         pirnt(i)
 }</span>
 </code></pre><p>repeat一般和break一起用，无限循环</p>
@@ -267,9 +266,10 @@
 </ol>
 <p>R中定义函数的最后一行为返回值（return）</p>
 <h4 id="2-2-2_the_“…”_Argument">2.2.2 the “…” Argument</h4><ul>
-<li>… is often used when extending another function and don’t want to copy the entire argument list of the original funciont</li>
+<li>… is often used when extending another function and don’t want to copy the entire argument list of the original function</li>
 <li>Generic functions use … so that extra arguments can be passed to methods</li>
-<li>the … argument is also necessary when the number of arguments passed to the function cannot be know in advance.<blockquote>
+<li><p>the … argument is also necessary when the number of arguments passed to the function cannot be know in advance.</p>
+<blockquote>
 <p>args(paste)<br>  function (…, sep = “ “, collapse = NULL)</p>
 </blockquote>
 </li>
