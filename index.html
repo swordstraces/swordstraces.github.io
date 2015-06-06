@@ -263,7 +263,7 @@ dateDownloaded &lt;- date()  <span class="comment">#记录下载时间</span>
 <li>rows how many rows to read of the file(rows =10 reads 10 lines)</li>
 <li>skip number of lines to skip before starting to read</li>
 </ul>
-<h3 id="reading_specific_rows_and_columns">reading specific rows and columns</h3><pre><code><span class="title">colIndex</span> &lt;- <span class="number">2</span>:<span class="number">3</span>
+<h3 id="2-reading_specific_rows_and_columns">2.reading specific rows and columns</h3><pre><code><span class="title">colIndex</span> &lt;- <span class="number">2</span>:<span class="number">3</span>
 <span class="title">rowIndex</span> &lt;- <span class="number">1</span>:<span class="number">4</span>
 <span class="title">cameraDateSubset</span> &lt;- read.xlsx(<span class="string">"./data/cameras.xlsx"</span>, sheetIndex = <span class="number">1</span>, colIndex = colIndex, rowIndex = rowIndex)
 </code></pre><h2 id="XML">XML</h2><p>Extensible markup language</p>
@@ -288,7 +288,12 @@ rootNode &lt;- <span class="function"><span class="title">xmlRoot</span><span cl
 <span class="function"><span class="title">xmlSApply</span><span class="params">(rootNode, xmlValue)</span></span>
 </code></pre><p><img src="/image/gettingdata2.png" alt=""></p>
 <p><img src="/image/gettingdata3.png" alt=""></p>
-
+<h2 id="3-_Create_data_tables_just_like_data_frames">3. Create data tables just like data frames</h2><pre><code><span class="function"><span class="title">library</span><span class="params">(data.table)</span></span>
+DF = data.<span class="function"><span class="title">frame</span><span class="params">(x=rnorm(<span class="number">9</span>)</span></span>,y=<span class="function"><span class="title">rep</span><span class="params">(c(<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>)</span></span>,each=<span class="number">3</span>,z=<span class="function"><span class="title">rnorm</span><span class="params">(<span class="number">9</span>)</span></span>)
+<span class="function"><span class="title">head</span><span class="params">(DF,<span class="number">3</span>)</span></span>
+DT = data.<span class="function"><span class="title">table</span><span class="params">(x=rnorm(<span class="number">9</span>)</span></span>,y=<span class="function"><span class="title">rep</span><span class="params">(c(<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>)</span></span>,each=<span class="number">3</span>,z=<span class="function"><span class="title">rnorm</span><span class="params">(<span class="number">9</span>)</span></span>)
+<span class="string">''</span><span class="function"><span class="title">head</span><span class="params">(DF,<span class="number">3</span>)</span></span>
+</code></pre>
       
     </div>
     
