@@ -298,13 +298,12 @@ dateDownloaded &lt;- date()  <span class="comment">#记录下载时间</span>
 <li>markup labels that give the text structure</li>
 <li>content the actual text of the document</li>
 </ul>
-<h3 id="tags_correspond_to_general_labels">tags correspond to general labels</h3><ul>
-<li>start tags \<section\></section\></li>
-<li>end tags \</li>
-<li>empty tags \<line-break \=""><br>elements are specific examples of tags</line-break></li>
-<li>\<greeting\> Hello, world \</greeting\></li>
-</ul>
-<h4 id="read_the_file_into_R">read the file into R</h4><pre><code><span class="function"><span class="title">library</span><span class="params">(XML)</span></span>
+<h3 id="tags_correspond_to_general_labels">tags correspond to general labels</h3><pre><code>-<span class="ruby"> start tags &lt;section&gt;
+</span>-<span class="ruby"> <span class="keyword">end</span> tags &lt;<span class="regexp">/section]&gt;
+</span></span>-<span class="ruby"> empty tags &lt;line-<span class="keyword">break</span> /&gt;
+</span>elements are specific examples of tags
+-<span class="ruby"> &lt;<span class="constant">Greeting</span>\&gt; <span class="constant">Hello</span>, world &lt;<span class="regexp">/Greeting&gt;</span></span>
+</code></pre><h4 id="read_the_file_into_R">read the file into R</h4><pre><code><span class="function"><span class="title">library</span><span class="params">(XML)</span></span>
 fileUrl &lt;- <span class="string">"http://www.w3schools.com/xml/simple.xml"</span>
 doc &lt;- <span class="function"><span class="title">xmlTreeParse</span><span class="params">(fileUrl, useInternal = TRUE)</span></span>
 rootNode &lt;- <span class="function"><span class="title">xmlRoot</span><span class="params">(doc)</span></span>
