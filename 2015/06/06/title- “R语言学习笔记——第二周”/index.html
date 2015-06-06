@@ -12,13 +12,17 @@ while
 repeat
 break
 next
-return与PYTHON中类似，syntax稍有不同：if() {
-##do something
+return与PYTHON中类似，syntax稍有不同：
+
+if() {
+#do something
 } else if() {
-##do something
+#do something
 } else {
-##do something else
-  for(i in 1:10)">
+    #do something else
+
+
+for(i in 1:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="“R语言学习笔记——第二周”">
 <meta property="og:url" content="http://wxshaw.tk/2015/06/06/title- “R语言学习笔记——第二周”/index.html">
@@ -30,13 +34,17 @@ while
 repeat
 break
 next
-return与PYTHON中类似，syntax稍有不同：if() {
-##do something
+return与PYTHON中类似，syntax稍有不同：
+
+if() {
+#do something
 } else if() {
-##do something
+#do something
 } else {
-##do something else
-  for(i in 1:10)">
+    #do something else
+
+
+for(i in 1:">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="“R语言学习笔记——第二周”">
 <meta name="twitter:description" content="R语言学习笔记——第二周2.1 控制结构 Control Structures
@@ -46,13 +54,17 @@ while
 repeat
 break
 next
-return与PYTHON中类似，syntax稍有不同：if() {
-##do something
+return与PYTHON中类似，syntax稍有不同：
+
+if() {
+#do something
 } else if() {
-##do something
+#do something
 } else {
-##do something else
-  for(i in 1:10)">
+    #do something else
+
+
+for(i in 1:">
   
     <link rel="alternative" href="/atom.xml" title="雨栖" type="application/atom+xml">
   
@@ -280,19 +292,31 @@ return与PYTHON中类似，syntax稍有不同：if() {
 <li>repeat</li>
 <li>break</li>
 <li>next</li>
-<li><p>return<br>与PYTHON中类似，syntax稍有不同：<br>if(<condition>) {</condition></p>
-<pre><code>#<span class="id">#do</span> something
-</code></pre><p>} else if(<conditon>) {</conditon></p>
-<pre><code>#<span class="id">#do</span> something
-</code></pre><p>} else {</p>
-<pre><code>#<span class="id">#do</span> something <span class="keyword">else</span>
-</code></pre><p>  for(i in 1:10) {</p>
-<pre><code><span class="function"><span class="title">pirnt</span><span class="params">(i)</span></span>
-</code></pre><p>  }</p>
-</li>
+<li>return<br>与PYTHON中类似，syntax稍有不同：</li>
 </ul>
-<p>repeat一般和break一起用，无限循环<br>    x0 &lt;- 1<br>    tol &lt;- 1e-8<br>    repeat {<br>            x1 &lt;- computeEstimate()<br>            if(abs(x1 - x0) &lt; tol {<br>                break<br>            } else {<br>                x0 &lt;- x1<br>            }<br>    }</p>
-<p>next: used to skip an iteration of loop<br>跳过本轮循环直接进入下一轮（break跳出循环）</p>
+<p>if(<condition>) {</condition></p>
+<pre><code><span class="id">#do</span> something
+</code></pre><p>} else if(<conditon>) {</conditon></p>
+<pre><code><span class="id">#do</span> something
+</code></pre><p>} else {</p>
+<pre><code>    #<span class="keyword">do</span> something <span class="keyword">else</span>
+
+
+<span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>) <span class="comment">{
+        pirnt(i)
+}</span>
+</code></pre><p>repeat一般和break一起用，无限循环</p>
+<pre><code><span class="title">x0</span> &lt;- <span class="number">1</span>
+<span class="title">tol</span> &lt;- <span class="number">1e-8</span>
+<span class="title">repeat</span> {
+        x1 &lt;- computeEstimate()
+        <span class="keyword">if</span>(abs(x1 - x0) &lt; tol {
+            break
+        } <span class="keyword">else</span> {
+            x0 &lt;- x1
+        }
+}
+</code></pre><p>next: used to skip an iteration of loop<br>跳过本轮循环直接进入下一轮（break跳出循环）</p>
 <h3 id="2-2_Function">2.2 Function</h3><pre><code>f &lt;- <span class="function"><span class="keyword">function</span><span class="params">(&lt;arguments&gt;)</span> </span>{
         ## <span class="keyword">do</span> something interesting
 }
