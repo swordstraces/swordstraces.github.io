@@ -257,12 +257,38 @@ list.files(<span class="string">"./data"</span>)
 [<span class="number">1</span>] <span class="string">"cameras.csv"</span>
 dateDownloaded &lt;- date()  <span class="comment">#记录下载时间</span>
 </code></pre><p><img src="/image/gettingdata1.png" alt=""></p>
-<h5 id="some_important_parameters">some important parameters</h5><ul>
+<h5 id="Some_important_parameters">Some important parameters</h5><ul>
 <li>quite you can tell R whether there are nay quoted values quote=“” means no quotes</li>
 <li>na.string set the character that represent a missing value</li>
 <li>rows how many rows to read of the file(rows =10 reads 10 lines)</li>
 <li>skip number of lines to skip before starting to read</li>
 </ul>
+<h3 id="reading_specific_rows_and_columns">reading specific rows and columns</h3><pre><code><span class="title">colIndex</span> &lt;- <span class="number">2</span>:<span class="number">3</span>
+<span class="title">rowIndex</span> &lt;- <span class="number">1</span>:<span class="number">4</span>
+<span class="title">cameraDateSubset</span> &lt;- read.xlsx(<span class="string">"./data/cameras.xlsx"</span>, sheetIndex = <span class="number">1</span>, colIndex = colIndex, rowIndex = rowIndex)
+</code></pre><h2 id="XML">XML</h2><p>Extensible markup language</p>
+<ul>
+<li>markup labels that give the text structure</li>
+<li>content the actual text of the document</li>
+</ul>
+<h3 id="tags_correspond_to_general_labels">tags correspond to general labels</h3><ul>
+<li>start tags \<section\></section\></li>
+<li>end tags \</li>
+<li>empty tags \<line-break \=""><br>elements are specific examples of tags</line-break></li>
+<li>\<greeting\> Hello, world \</greeting\></li>
+</ul>
+<h4 id="read_the_file_into_R">read the file into R</h4><pre><code><span class="function"><span class="title">library</span><span class="params">(XML)</span></span>
+fileUrl &lt;- <span class="string">"http://www.w3schools.com/xml/simple.xml"</span>
+doc &lt;- <span class="function"><span class="title">xmlTreeParse</span><span class="params">(fileUrl, useInternal = TRUE)</span></span>
+rootNode &lt;- <span class="function"><span class="title">xmlRoot</span><span class="params">(doc)</span></span>
+<span class="function"><span class="title">xmlName</span><span class="params">(rootNode)</span></span>
+[<span class="number">1</span>] <span class="string">"breakfast_menu"</span>
+<span class="function"><span class="title">names</span><span class="params">(rootNode)</span></span>
+
+
+<span class="function"><span class="title">xmlSApply</span><span class="params">(rootNode, xmlValue)</span></span>
+</code></pre><p><a href="/image/gettingdata2.png">img</a></p>
+<p><a href="/image/gettingdata3.png">img</a></p>
 
       
     </div>
