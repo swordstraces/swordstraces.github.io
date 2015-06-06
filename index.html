@@ -234,11 +234,11 @@
 <li>next</li>
 <li><p>return<br>与PYTHON中类似，syntax稍有不同：</p>
 <p>  if(<condition>) {</condition></p>
-<pre><code><span class="id">#do</span> something
+<pre><code><span class="keyword">do</span> something
 </code></pre><p>  } else if(<conditon>) {</conditon></p>
-<pre><code><span class="id">#do</span> something
+<pre><code><span class="keyword">do</span> something
 </code></pre><p>  } else {</p>
-<pre><code><span class="id">#do</span> something <span class="keyword">else</span>
+<pre><code><span class="keyword">do</span> something <span class="keyword">else</span>
 </code></pre><p>  for(i in 1:10) {</p>
 <pre><code><span class="function"><span class="title">pirnt</span><span class="params">(i)</span></span>
 </code></pre><p>  }</p>
@@ -257,7 +257,7 @@
 }
 </code></pre><p>next: used to skip an iteration of loop<br>跳过本轮循环直接进入下一轮（break跳出循环）</p>
 <h2 id="2-2_Function">2.2 Function</h2><pre><code>f &lt;- <span class="function"><span class="keyword">function</span><span class="params">(&lt;arguments&gt;)</span> </span>{
-        ## <span class="keyword">do</span> something interesting
+         <span class="keyword">do</span> something interesting
 }
 </code></pre><h4 id="2-2-1_argument_matching">2.2.1 argument matching</h4><ol>
 <li>check for exact match for a named argument 完全匹配</li>
@@ -308,10 +308,8 @@
 <li>Times are represented by the <strong>POSIXct</strong> or the <strong>POSIXlt</strong> class</li>
 <li>Dates are stored internally as the number of days since 1970–01-01</li>
 <li><p>Times are stored internally as the number of seconds since 1970-01-01</p>
-<p>  x&lt;- as.Date(“1970-01-01”)<br>  x</p>
-<h2 id="[1]_“1970-01-01”">[1] “1970-01-01”</h2><p>  unclass(x)</p>
-<h2 id="[1]_0">[1] 0</h2><p>  unclass(as.Date(“1970-01-01”))</p>
-<h2 id="[1]_1">[1] 1</h2></li>
+<p>  x&lt;- as.Date(“1970-01-01”)<br>  x<br>  [1] “1970-01-01”<br>  unclass(x)<br>  [1] 0<br>  unclass(as.Date(“1970-01-01”))<br>  [1] 1</p>
+</li>
 <li><p><strong>POSIXct</strong> is just a very large integer under the hood; it use a useful class when you want to store times in something like a data frame</p>
 </li>
 <li><strong>POSIXlt</strong> is a list underneath and it stores a bunch of other useful information like the day of the week, day of the year, month, day of the month</li>
@@ -321,10 +319,8 @@
 <li><strong>weekdays</strong> give the day of the week</li>
 <li><strong>months</strong> give the month name</li>
 <li><p><strong>quarters</strong> give the quarter number (“Q1”,”Q2)</p>
-<p>  x &lt;- Sys.time()<br>  x</p>
-<h2 id="[1]_“2013-01-24_22:04:14_ETS“">[1] “2013-01-24 22:04:14 ETS“</h2><p>  p &lt;- as.POSIXlt(x)<br>  names(unclass(p))</p>
-<h2 id="[1]_“sec”_“min”_“hour”_“mday”_“mon”">[1] “sec” “min” “hour” “mday” “mon”</h2><h2 id="[6]_“year”_“wday”_“yday”_“isdst”">[6] “year” “wday” “yday” “isdst”</h2><p>  p$sec</p>
-<h2 id="[1]_14-34">[1] 14.34</h2></li>
+<p>  x &lt;- Sys.time()<br>  x<br>  [1] “2013-01-24 22:04:14 ETS“<br>  p &lt;- as.POSIXlt(x)<br>  names(unclass(p))<br>  [1] “sec” “min” “hour” “mday” “mon”<br>  [6] “year” “wday” “yday” “isdst”<br>  p$sec<br>  [1] 14.34</p>
+</li>
 </ul>
 
       
